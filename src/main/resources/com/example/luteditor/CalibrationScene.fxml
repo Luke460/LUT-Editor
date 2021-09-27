@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="227.0" layoutY="14.0" text="FFB Calibration">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Label>
+      <Hyperlink layoutX="50.0" layoutY="80.0" prefHeight="23.0" prefWidth="508.0" text="https://www.microsoft.com/en-us/p/wheel-tester/9nblggh56167?activetab=pivot:overviewtab" />
+      <Label layoutX="40.0" layoutY="60.0" prefWidth="520.0" text="1: Download Wheel Tester available on Microsoft Store for free:" />
+      <Label layoutX="40.0" layoutY="120.0" prefHeight="17.0" prefWidth="520.0" text="2: Connect your steering wheel to your PC and then launch Wheel Tester." />
+      <Label layoutX="40.0" layoutY="160.0" prefHeight="39.0" prefWidth="520.0" text="3: Enable Spring Effects (at the bottom left of the window). Your steering wheel will have a centering force." wrapText="true" />
+      <Label layoutX="40.0" layoutY="220.0" prefHeight="53.0" prefWidth="520.0" text="4: Move the wheel to the right (or to the left) and measure the number of degrees at which the steering wheel's FFB starts to operate. The rotation value in degrees is available in the upper left corner." wrapText="true" />
+      <Label layoutX="40.0" layoutY="300.0" prefWidth="520.0" text="5: Enter the value in the following field:" />
+      <TextField layoutX="270.0" layoutY="296.0" prefWidth="60.0" />
+      <Button layoutX="343.0" layoutY="340.0" mnemonicParsing="false" text="Done">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="200.0" layoutY="340.0" mnemonicParsing="false" text="Back">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
