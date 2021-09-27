@@ -1,4 +1,4 @@
-# LUT-Editor
+# LUT-Editor (Coming soon...)
 A new app to customize your steering wheel FFB in supported games.
 
 ...work in progress...
