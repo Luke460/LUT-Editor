@@ -13,7 +13,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.luteditor.MainController">
    <children>
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="820.0">
         <menus>
@@ -31,7 +31,7 @@
             </Menu>
             <Menu mnemonicParsing="false" text="Calibration">
                <items>
-                  <MenuItem mnemonicParsing="false" text="New Calibration" />
+                  <MenuItem mnemonicParsing="false" text="Save Calibration" />
                   <MenuItem mnemonicParsing="false" text="Load Calibration" />
                   <MenuItem mnemonicParsing="false" text="Delete Calibration" />
                </items>
@@ -67,7 +67,8 @@
       <Label layoutX="68.0" layoutY="331.0" text="LUT Resolution" />
       <Separator layoutX="20.0" layoutY="305.0" prefHeight="8.0" prefWidth="390.0" />
       <ChoiceBox layoutX="240.0" layoutY="327.0" prefWidth="100.0" />
-      <Button layoutX="68.0" layoutY="382.0" mnemonicParsing="false" text="Default" />
-      <Button layoutX="246.0" layoutY="382.0" mnemonicParsing="false" text="Generate LUT" />
+      <Button layoutX="31.0" layoutY="382.0" mnemonicParsing="false" onAction="#switchToNewCalibrationScene" text="New Calibration" />
+      <Button layoutX="180.0" layoutY="382.0" mnemonicParsing="false" text="Default Values" />
+      <Button layoutX="314.0" layoutY="382.0" mnemonicParsing="false" text="Generate LUT" />
    </children>
 </AnchorPane>
