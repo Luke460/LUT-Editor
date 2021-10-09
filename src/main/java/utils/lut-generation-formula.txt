@@ -1,0 +1,1 @@
+y=x+\left(d\cdot\frac{l-x}{l}\right)-\left(l-s\right)\cdot\frac{x}{l}+\left(\frac{\left(\frac{l}{2}-x\right)^{2}}{l}-\frac{l}{4}\right)\cdot\frac{g\cdot100}{l}\cdot\left(\frac{s}{100}-\frac{d}{100}\right)
