@@ -48,10 +48,10 @@
       </MenuBar>
       <LineChart layoutX="415.0" layoutY="30.0" prefHeight="400.0" prefWidth="400.0">
         <xAxis>
-          <NumberAxis side="BOTTOM" />
+          <NumberAxis side="BOTTOM" upperBound="99.0" />
         </xAxis>
         <yAxis>
-          <NumberAxis side="LEFT" />
+          <NumberAxis side="LEFT" upperBound="99.0" />
         </yAxis>
       </LineChart>
       <Slider blockIncrement="0.25" layoutX="15.0" layoutY="80.0" majorTickUnit="1.0" max="20.0" prefHeight="14.0" prefWidth="400.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
@@ -60,7 +60,7 @@
       <Slider blockIncrement="5.0" layoutX="15.0" layoutY="180.0" majorTickUnit="5.0" min="50.0" minorTickCount="4" prefHeight="14.0" prefWidth="400.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="100.0" />
       <TextField layoutX="265.0" layoutY="147.0" prefHeight="25.0" prefWidth="49.0" text="100" />
       <Label layoutX="68.0" layoutY="151.0" prefHeight="17.0" prefWidth="143.0" text="Gain" />
-      <Slider blockIncrement="0.2" layoutX="15.0" layoutY="260.0" majorTickUnit="0.5" max="2.0" min="-2.0" minorTickCount="5" prefHeight="14.0" prefWidth="400.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+      <Slider blockIncrement="0.05" layoutX="15.0" layoutY="260.0" majorTickUnit="0.25" max="1.0" min="-1.0" minorTickCount="4" prefHeight="14.0" prefWidth="400.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
       <TextField layoutX="265.0" layoutY="227.0" prefHeight="25.0" prefWidth="49.0" text="0" />
       <Label layoutX="68.0" layoutY="231.0" prefHeight="17.0" prefWidth="143.0" text="Gamma" />
       <Separator layoutX="20.0" layoutY="125.0" prefHeight="8.0" prefWidth="390.0" />
