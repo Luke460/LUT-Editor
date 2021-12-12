@@ -45,27 +45,27 @@
             </Menu>
         </menus>
       </MenuBar>
-      <LineChart layoutX="410.0" layoutY="35.0" prefHeight="360.0" prefWidth="360.0">
+      <LineChart fx:id="lineChart" animated="false" createSymbols="false" layoutX="410.0" layoutY="35.0" legendVisible="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="360.0" prefWidth="360.0">
         <xAxis>
-          <NumberAxis side="BOTTOM" upperBound="99.0" />
+          <NumberAxis autoRanging="false" side="BOTTOM" tickUnit="10" upperBound="100.0" />
         </xAxis>
         <yAxis>
-          <NumberAxis side="LEFT" upperBound="99.0" />
+          <NumberAxis autoRanging="false" side="LEFT" tickUnit="10" upperBound="100.0" />
         </yAxis>
       </LineChart>
-      <Slider fx:id="deadZoneSlider" blockIncrement="0.25" layoutX="15.0" layoutY="80.0" majorTickUnit="1.0" max="20.0" onMouseReleased="#updateDeadZoneFieldFromSlider" prefHeight="14.0" prefWidth="400.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+      <Slider fx:id="deadZoneSlider" blockIncrement="0.25" layoutX="15.0" layoutY="80.0" majorTickUnit="1.0" max="20.0" onKeyPressed="#updateDeadZoneFieldFromSlider" onMouseReleased="#updateDeadZoneFieldFromSlider" prefHeight="14.0" prefWidth="400.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
       <TextField fx:id="deadZoneTextField" layoutX="265.0" layoutY="47.0" onAction="#updateDeadZoneFromTextField" prefHeight="25.0" prefWidth="49.0" text="0" />
       <Label layoutX="68.0" layoutY="51.0" prefHeight="17.0" prefWidth="189.0" text="Deadzone Compensation" />
-      <Slider fx:id="gainSlider" blockIncrement="5.0" layoutX="15.0" layoutY="180.0" majorTickUnit="5.0" min="50.0" minorTickCount="4" onMouseReleased="#updateGainFieldFromSlider" prefHeight="14.0" prefWidth="400.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="100.0" />
+      <Slider fx:id="gainSlider" blockIncrement="1.0" layoutX="15.0" layoutY="180.0" majorTickUnit="5.0" min="50.0" minorTickCount="4" onKeyPressed="#updateGainFieldFromSlider" onMouseReleased="#updateGainFieldFromSlider" prefHeight="14.0" prefWidth="400.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="100.0" />
       <TextField fx:id="gainTextField" layoutX="265.0" layoutY="147.0" onAction="#updateGainFromTextField" prefHeight="25.0" prefWidth="49.0" text="100" />
       <Label layoutX="68.0" layoutY="151.0" prefHeight="17.0" prefWidth="143.0" text="Gain" />
-      <Slider fx:id="gammaSlider" blockIncrement="0.05" layoutX="15.0" layoutY="280.0" majorTickUnit="0.25" max="1.0" min="-1.0" minorTickCount="4" onMouseReleased="#updateGammaFieldFromSlider" prefHeight="14.0" prefWidth="400.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+      <Slider fx:id="gammaSlider" blockIncrement="0.05" layoutX="15.0" layoutY="280.0" majorTickUnit="0.25" max="1.0" min="-1.0" minorTickCount="4" onKeyPressed="#updateGammaFieldFromSlider" onMouseReleased="#updateGammaFieldFromSlider" prefHeight="14.0" prefWidth="400.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
       <TextField fx:id="gammaTextField" layoutX="265.0" layoutY="247.0" onAction="#updateGammaFromTextField" prefHeight="25.0" prefWidth="49.0" text="0" />
       <Label layoutX="68.0" layoutY="251.0" prefHeight="17.0" prefWidth="143.0" text="Gamma" />
       <Separator layoutX="20.0" layoutY="125.0" prefHeight="8.0" prefWidth="390.0" />
       <Separator layoutX="20.0" layoutY="325.0" prefHeight="8.0" prefWidth="390.0" />
       <Button layoutX="31.0" layoutY="352.0" mnemonicParsing="false" onAction="#switchToNewCalibrationScene" text="New Calibration" />
-      <Button layoutX="180.0" layoutY="352.0" mnemonicParsing="false" text="Default Values" />
+      <Button layoutX="180.0" layoutY="352.0" mnemonicParsing="false" onAction="#setDefaultValues" text="Default Values" />
       <Button layoutX="314.0" layoutY="352.0" mnemonicParsing="false" text="Generate LUT" />
       <Separator layoutX="20.0" layoutY="225.0" prefHeight="8.0" prefWidth="390.0" />
    </children>
