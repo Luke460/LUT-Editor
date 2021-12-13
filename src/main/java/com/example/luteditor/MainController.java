@@ -16,7 +16,12 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
+import model.Lut;
 import org.apache.commons.math3.util.Precision;
+import utils.Calculator;
+import utils.LutWriter;
+
+import javax.swing.*;
 
 public class MainController {
 
@@ -39,9 +44,11 @@ public class MainController {
     @FXML
     private LineChart lineChart;
 
+    private Lut lut;
+
     private static final String CALIBRATION_SCENE_FILE = "CalibrationScene.fxml";
     private static final String MAIN_EDITING_FILE = "MainEditingScene.fxml";
-    private static final Integer LUT_RESOLUTION = 100;
+    private static final Integer LUT_RESOLUTION = 1000;
 
     // SCENE SWITCHING
 
@@ -50,6 +57,7 @@ public class MainController {
         Node sourceNode = (Node)event.getSource();
         Scene sourceScene = sourceNode.getScene();
         stage = (Stage)sourceScene.getWindow();
+
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -133,14 +141,32 @@ public class MainController {
     }
 
     public void updateChart() {
-        XYChart.Series lut = utils.Calculator.generateCustomLut(
+        this.lut = utils.Calculator.generateCustomLut(
                 LUT_RESOLUTION,
                 Double.parseDouble(deadZoneTextField.getText()),
                 Integer.parseInt(gainTextField.getText()),
                 Double.parseDouble(gammaTextField.getText())
         );
+        XYChart.Series lutSeries = Calculator.getSeriesFromLut(this.lut, Calculator.LUT_SERIES_KEY);
         lineChart.getData().clear();
-        lineChart.getData().add(lut);
+        lineChart.getData().add(lutSeries);
+    }
+
+    public void generateLut(){
+        updateChart();
+        String fileName = LutWriter.generateFileName(
+                Integer.parseInt(gainTextField.getText()),
+                Double.parseDouble(deadZoneTextField.getText()),
+                Double.parseDouble(gammaTextField.getText())
+        );
+        try {
+            LutWriter.saveLutFile(
+                    fileName,
+                    this.lut);
+            JOptionPane.showMessageDialog(null, "Process completed! Output file: '" + fileName + "'.");
+        } catch(IOException e) {
+            JOptionPane.showMessageDialog(null, "Unable to write output file: '" + fileName + "'.");
+        }
     }
 
 }
